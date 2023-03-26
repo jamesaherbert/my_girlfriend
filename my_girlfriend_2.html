@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James and Floor - A Love Story</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+ 
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            color: #2e8b57;
+            margin-top: 20px;
+        }
+ 
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>How Amazing My Girlfriend Floor Is</h1>
+    <p>
+        Hi, my name is James, and I want to share how incredibly amazing my girlfriend Floor is. She's not only beautiful, but she's also kind, caring, and intelligent. She always brings out the best in me and supports me in everything I do. She's truly one of a kind, and I feel so lucky to have her in my life.
+    </p>
+    <p>
+        Floor has this amazing ability to light up a room with her smile and make everyone feel at ease. She's always willing to lend a helping hand and genuinely cares about the well-being of others. Her compassion and empathy are truly inspiring.
+    </p>
+    <p>
+        Not only is Floor an incredible partner, but she's also an amazing friend. She's always there for her friends, offering support, encouragement, and a shoulder to lean on. She has a heart of gold and is always willing to go the extra mile to help someone in need.
+    </p>
+    <p>
+        I am so grateful for Floor and everything she brings to our relationship. She truly is the most amazing person I know, and I can't wait to see what the future holds for us. I love you, Floor!
+    </p>
+<h2>Heart Collector - A Game of Love for Floor</h2>
+<p>Click on the hearts to collect them and express your love for Floor:</p>
+<div id="gameArea" style="position: relative; width: 300px; height: 300px; border: 1px solid #333;"></div>
+<p id="gameMessage"></p>
+
+<script>
+  const gameArea = document.getElementById("gameArea");
+  const gameMessage = document.getElementById("gameMessage");
+  const totalHearts = 10;
+  let heartsCollected = 0;
+
+  function createHeart() {
+    const heart = document.createElement("span");
+    heart.innerHTML = "❤️";
+    heart.style.position = "absolute";
+    heart.style.cursor = "pointer";
+    heart.style.fontSize = "24px";
+    heart.style.left = `${Math.random() * (gameArea.clientWidth - 24)}px`;
+    heart.style.top = `${Math.random() * (gameArea.clientHeight - 24)}px`;
+
+    heart.addEventListener("click", () => {
+      heartsCollected++;
+      gameArea.removeChild(heart);
+
+      if (heartsCollected === totalHearts) {
+        gameMessage.innerHTML = "You've collected all the hearts! Your love for Floor knows no bounds!";
+        gameMessage.style.color = "red";
+      } else {
+        setTimeout(createHeart, 500);
+      }
+    });
+
+    gameArea.appendChild(heart);
+  }
+
+  for (let i = 0; i < totalHearts; i++) {
+    setTimeout(createHeart, i * 500);
+  }
+</script>
+
+</body>
+</html>
